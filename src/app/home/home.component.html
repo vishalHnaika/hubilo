@@ -1,0 +1,50 @@
+<div class="main-section">
+  <h1>
+    Demo App
+  </h1>
+  <!-- <div>
+    <button type="button" class="btn btn-info btn-add-map">Add New</button>
+    <button type="button" class="btn btn-success btn-get-map">Get Code</button>
+  </div>
+
+  <div class="imagemaps-wrapper">
+    <img src="../assets/images/hubilo image.png" (load)="loadImg($event)" width="100%" height="auto" draggable="false"
+      usemap="#imagemaps3">
+    <map class="imagemaps" name="imagemaps3">
+      <area shape="rect" name="imagemaps-area" class="imagemaps-area0" coords="86,81,251,186"
+        href="https://www.jqueryscript.net" target="_blank">
+    </map>
+  </div> -->
+
+
+  <div class="form-group file-area">
+    <input #file type="file" name="images" id="images" accept='image/*' (change)="preview(file.files)" />
+    <!-- <input type="file" name="images" id="images" required="required" multiple="multiple" /> -->
+    <div class="file-dummy">
+      <div class="success">Please select some files</div>
+    </div>
+  </div>
+
+  <p style="color:red;" *ngIf="message">{{message}}</p>
+
+  <!-- <img [src]="imgURL" height="200" *ngIf="imgURL">  -->
+  <div>
+    <div *ngIf="canvasboardFlag"  class="whiteboard" style="height: 2000px; width: 100%; border: 1px solid black">
+      <canvas-whiteboard  class="canvas-whiteboard" #canvasWhiteboard [imageUrl]="imgURL" [options]="canvasOptions"
+        (onBatchUpdate)="onCanvasDraw($event)" (onClear)="onCanvasClear($event)" (onUndo)="onCanvasUndo($event)"
+        (onRedo)="onCanvasRedo($event)" (onSave)="onCanvasSave($event)">
+      </canvas-whiteboard>
+    </div>
+    <div >
+      <a [href]="finalImgURL" download>
+<!--        <button >Download</button>-->
+        <button class="download-btn">Download
+        </button>
+      </a>
+
+      <img [src]="finalImgURL" id="target" alt="[Text Over Example]" />
+    </div>
+  </div>
+
+
+</div>

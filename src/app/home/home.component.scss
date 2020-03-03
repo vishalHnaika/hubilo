@@ -1,0 +1,73 @@
+.main-section{
+    h1{
+        text-align: center;
+    }
+    .file-area {
+        width: 100%;
+        position: relative;
+
+        input[type=file] {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        .file-dummy {
+
+          padding: 30px;
+          background: rgba(255,255,255,0.2);
+          border: 2px dashed rgba(255,255,255,0.2);
+          text-align: center;
+
+          .success {
+            display: none;
+          }
+        }
+
+        &:hover .file-dummy {
+          background: rgba(255,255,255,0.1);
+        }
+
+        input[type=file]:focus + .file-dummy {
+          outline: none;
+          outline: none;
+        }
+
+        input[type=file]:valid + .file-dummy {
+          border-color: #000000;
+          background-color: #c3c3c3;
+
+          .success {
+            display: inline-block;
+          }
+          .default {
+            display: none;
+          }
+        }
+      }
+
+    .form-group {
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .whiteboard {
+        .canvas-whiteboard{
+            border: 1px solid   black
+        }
+        .canvas_wrapper_div {
+            .canvas_whiteboard_buttons{
+                position: relative !important;
+            }
+        }
+    }
+}
+
+/* ===================== FILE INPUT ===================== */
+
